@@ -10,7 +10,7 @@ RUN apt-get -qq update; \
     pip install --upgrade setuptools; \
     pip install --upgrade gcloud
 
-ADD src /opt/practice/bin
+ADD src /src
 EXPOSE 8081
-RUN ["chmod", "+x", "/opt/practice/bin/backend.py"]
-CMD ["/opt/practice/bin/backend.py"]
+RUN ["chmod", "+x", "/src/backend.py"]
+CMD ["/src/backend.py"]

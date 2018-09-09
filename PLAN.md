@@ -24,3 +24,4 @@ root/
 frontendとbackendの間をRESTFUL AIPにする。
 一旦はML忘れて、入力されたものを加工して返すだけでも良いかもしれない
 ```
+

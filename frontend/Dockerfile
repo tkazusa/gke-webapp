@@ -1,6 +1,6 @@
 FROM debian:9.4
-LABEL maintainer "Etsuji Nakai <enakai@google.com>"
-ENV REFRESHED_AT 2017/02/28
+LABEL maintainer "Taketoshi Kazusa <taketoshi.kazusa@gmail.com>"
+ENV REFRESHED_AT 2018/09/07
 
 RUN apt-get -qq update; \
     apt-get -qq -y upgrade; \
@@ -10,6 +10,8 @@ RUN apt-get -qq update; \
     pip install --upgrade setuptools; \
     pip install --upgrade gcloud
 
-ADD src /opt/gobang/bin
+ADD src /src
 EXPOSE 8080
-CMD ["/opt/gobang/bin/frontend.py"]
+RUN ["chmod", "+x", "/src/frontend.py"]
+CMD ["bin/bash"]
+
