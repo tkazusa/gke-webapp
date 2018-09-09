@@ -13,5 +13,5 @@ RUN apt-get -qq update; \
 ADD src /opt/practice/bin
 EXPOSE 8080
 RUN ["chmod", "+x", "/opt/practice/bin/frontend.py"]
-CMD ["/opt/practice/bin/frontend.py"]
+CMD ["/bin/bash"]
 
