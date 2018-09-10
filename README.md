@@ -1,4 +1,4 @@
-# mycroservisized ML web application 
+# mycroservicized ML web application 
 ```
 make build
 make run
