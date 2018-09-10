@@ -5,4 +5,6 @@ import pytest
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-from
+from frontend.src.frontend import result
+
+

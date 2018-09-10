@@ -12,7 +12,7 @@ class People:
     def __init__(self, INPUT_DATA):
         self.data = INPUT_DATA
 
-    def status(self):
+    def status_prediction(self):
         PreprocessedData = preprocess(self.data)
         model = Predictor()
         status = model.predict(PreprocessedData)
@@ -24,7 +24,7 @@ def post():
     data = request.json
     INPUT_DATA = pd.read_json(data)
     people = People(INPUT_DATA)
-    status = people.status()
+    status = people.status_prediction()
 
     response = jsonify(status)
     response.status_code = 200
