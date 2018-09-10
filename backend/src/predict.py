@@ -1,10 +1,11 @@
 import numpy as np
 from sklearn.externals import joblib
-from configs.settings import MODEL_PATH
+from settings import MODEL_PATH
 
 
 class Predictor(object):
-    """推定をおこなうクラス"""
+    """prediction class"""
+
     def __init__(self):
         self.model = joblib.load(MODEL_PATH)
 

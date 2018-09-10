@@ -2,16 +2,12 @@
 
 import requests
 import json
-from collections import namedtuple
 
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
 URL = "http://backend:8081"
-
-data = {'name': 'hiraki',
-        'age': 30}
 headers = {'Content-Type': 'application/json'}
 
 
@@ -34,12 +30,11 @@ def result():
         "Embarked": request.form["embarked"]}
 
     response = requests.post(URL, data=json.dumps(INPUT_DATA), headers=headers)
-    # if response == 1:
-    #    status = "dead"
-    # else:
-    #     status = "alive"
-    # return render_template('result.html', status=status)
-    return render_template('result.html', status=response.text)
+    if response == 1:
+        status = "dead"
+    else:
+        status = "alive"
+    return render_template('result.html', status=status)
 
 
 if __name__ == "__main__":
