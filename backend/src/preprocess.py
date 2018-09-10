@@ -1,6 +1,6 @@
-import pandas as pd
 import re
 
+import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import preprocessing
 from sklearn.externals import joblib

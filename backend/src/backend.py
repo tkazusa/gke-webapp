@@ -13,8 +13,7 @@ class People:
         self.data = INPUT_DATA
 
     def status(self):
-        data = pd.read_js(self.data)
-        PreprocessedData = preprocess(data)
+        PreprocessedData = preprocess(self.data)
         model = Predictor()
         status = model.predict(PreprocessedData)
         return status
@@ -22,11 +21,12 @@ class People:
 
 @app.route('/', methods=['POST'])
 def post():
-    INPUT_DATA = request.json
-    people = People(INPUT_DATA)
-    status = people.status()
+    data = request.json
+    INPUT_DATA = pd.read_json(data)
+    # people = People(INPUT_DATA)
+    # status = people.status()
 
-    response = jsonify(status)
+    response = jsonify(INPUT_DATA)
     response.status_code = 200
     return response
 

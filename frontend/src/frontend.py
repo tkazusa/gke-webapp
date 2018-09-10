@@ -34,6 +34,11 @@ def result():
         "Embarked": request.form["embarked"]}
 
     response = requests.post(URL, data=json.dumps(INPUT_DATA), headers=headers)
+    # if response == 1:
+    #    status = "dead"
+    # else:
+    #     status = "alive"
+    # return render_template('result.html', status=status)
     return render_template('result.html', status=response.text)
 
 

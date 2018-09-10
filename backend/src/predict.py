@@ -9,6 +9,4 @@ class Predictor(object):
         self.model = joblib.load(MODEL_PATH)
 
     def predict(self, data):
-        print(data.columns)
-        print(data.head())
         return self.model.predict(data)

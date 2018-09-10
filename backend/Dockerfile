@@ -8,7 +8,8 @@ RUN apt-get -qq update; \
         curl python python-dev python-pip \
         python-flask python-requests; \
     pip install --upgrade setuptools; \
-    pip install --upgrade gcloud
+    pip install --upgrade gcloud; \
+    pip install pandas numpy sklearn scipy
 
 ADD src /src
 EXPOSE 8081
