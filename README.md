@@ -14,4 +14,4 @@ $ make run
 ```bash
 $ make clean
 ```
-From　your local browser, accsess `http://localhost:8080`.
+From your local browser, accsess `http://localhost:8080`.
