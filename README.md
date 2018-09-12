@@ -1,4 +1,4 @@
-# mycroservicized ML web application 
+# Mycroservice ML web application 
 ## Example 
 ### Add users to docker group
 ```bash
