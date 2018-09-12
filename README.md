@@ -1,6 +1,10 @@
 # mycroservicized ML web application 
+```bash
+$ sudo gpasswd -a [username] docker
 ```
-make build
-make run
+
+```bash
+$ make build
+$ make run
 ```
 From　your local browser, accsess `http://localhost:8080`.

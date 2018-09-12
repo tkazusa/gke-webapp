@@ -24,7 +24,7 @@ def post():
     data = request.json
     INPUT_DATA = pd.read_json(data)
     people = People(INPUT_DATA)
-    status = people.status_prediction()
+    status = people.status_predict()
 
     response = jsonify(status)
     response.status_code = 200
