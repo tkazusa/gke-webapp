@@ -19,6 +19,24 @@ build: backend/ frontend/
 up:
 	sudo docker-compose up -d
 
+.PHONY: clean
+	sudo docker-compose stop
+	sudo docker-compose down
+
+.PHONY: stop
+stop:
+	sudo docker-compose stop
+
+.PHONY: down
+down:
+	sudo docker-compose down
+	
+.PHONY: clean
+clean:
+	 docker stop $(BACKEND_CONTAINER) $(FRONTEND_CONTAINER)
+	 docker rm $(BACKEND_CONTAINER) $(FRONTEND_CONTAINER)
+	 docker rmi $(BACKEND_IMAGE) $(FRONTEND_IMAGE)
+
 .PHONY: install
 install: requirements.txt
 	pip intall -r requirements.txt
@@ -27,16 +45,4 @@ install: requirements.txt
 run:
 	 sudo docker run -d --name $(BACKEND_CONTAINER) -e PROJECT_ID=$(PROJECT_ID) $(BACKEND_IMAGE)
 	 sudo docker run -itd --name $(FRONTEND_CONTAINER) -p 8080:8080 -e PROJECT_ID=$(PROJECT_ID) --link backend:backend $(FRONTEND_IMAGE)
-	
-
-.PHONY: clean
-clean:
-	 docker stop $(BACKEND_CONTAINER)
-	 docker rm $(BACKEND_CONTAINER)
-	 docker rmi $(BACKEND_IMAGE)
-	
-	 docker stop $(FRONTEND_CONTAINER)
-	 docker rm $(FRONTEND_CONTAINER)
-	 docker rmi $(FRONTEND_IMAGE)
-
 
