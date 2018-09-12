@@ -1,6 +1,17 @@
 # mycroservicized ML web application 
+## Example 
+### Add users to docker group
+```bash
+$ sudo gpasswd -a [username] docker
 ```
-make build
-make run
+
+### Build both frontend and  backend images and run containers with them.
+```bash
+$ make build
+$ make run
 ```
-From　your local browser, accsess `http://localhost:8080`.
+### Stop containers and remove images
+```bash
+$ make clean
+```
+From your local browser, accsess `http://localhost:8080`.
