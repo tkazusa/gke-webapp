@@ -1,5 +1,5 @@
-BACKEND_DIR := backend/
-FRONTEND_DIR := frontend/
+BACKEND_DIR := dorckerfiles/backend/
+FRONTEND_DIR := dockerfiles/frontend/
 
 BACKEND_IMAGE := backend:v1.0
 FRONTEND_IMAGE := frontend:v1.0
